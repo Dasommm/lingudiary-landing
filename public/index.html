@@ -609,6 +609,64 @@
       justify-content: space-between;
     }
 
+    /* ========== FAQ ========== */
+    .faq { padding-top: 100px; padding-bottom: 100px; }
+    .faq .section-header { text-align: center; margin: 0 auto 64px; }
+    .faq .section-sub { margin: 0 auto; }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-elevated);
+    }
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:first-child { border-top: none; }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 28px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.2s, background 0.2s;
+    }
+    .faq-q:hover { background: var(--bg-card); }
+    .faq-item.open .faq-q { color: var(--mint); }
+    .faq-q .sign {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      color: var(--mint);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-q .sign { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-a p {
+      padding: 0 28px 24px;
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .faq-a p .hl { color: var(--mint); font-weight: 500; }
+
     @media (max-width: 720px) {
       h1 { font-size: 42px; }
       h2 { font-size: 32px; }
@@ -633,6 +691,7 @@
     <div class="nav-links">
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="https://apps.apple.com/kr/app/lingudiary-ai-%EC%98%81%EC%96%B4-%EC%9D%BC%EA%B8%B0/id6766164095" target="_blank" rel="noopener" class="cta-mini">Download</a>
     </div>
   </nav>
@@ -799,6 +858,47 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">// FAQ</div>
+        <h2>Before you <span class="mint-text">start.</span></h2>
+        <p class="section-sub">시작하기 전, 가장 많이 묻는 질문들을 모았어요.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item open">
+          <button class="faq-q">AI 첨삭, 진짜 믿을 만한가요?<span class="sign">+</span></button>
+          <div class="faq-a"><p>영어 교육에 특화된 AI가 문법·어휘·자연스러움까지 한 문장씩 짚어 첨삭하고, 왜 그렇게 고쳤는지 설명을 덧붙여요. 문법 오류 검출은 약 <span class="hl">95% 정확도</span>이며, 단순히 정답만 알려주는 게 아니라 학습자가 스스로 판단할 수 있도록 "왜"까지 함께 알려드립니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">첨삭은 얼마나 걸리나요?<span class="sign">+</span></button>
+          <div class="faq-a"><p>일기를 제출하면 보통 <span class="hl">5분 안에</span> 첨삭이 완료돼요. 쓴 직후 바로 확인하며 복습하기 좋은 흐름으로 설계했습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">한국어를 섞어 써도 괜찮나요?<span class="sign">+</span></button>
+          <div class="faq-a"><p>네, 정말 괜찮아요. "오늘 회의에서 진짜 어이없었다 was so weird"처럼 한영 혼용으로 써도 자연스러운 영어로 다듬어드려요. 막혀서 안 쓰는 것보다, <span class="hl">일단 쓰는 게</span> 훨씬 중요하거든요.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">영어 실력이 어느 정도여야 하나요?<span class="sign">+</span></button>
+          <div class="faq-a"><p>간단한 문장을 스스로 쓸 수 있는 중급 학습자(CEFR 기준 <span class="hl">B1–B2</span>)에게 가장 잘 맞아요. 문법은 어느 정도 알지만 표현이 아직 어색하게 느껴진다면 딱 좋은 단계입니다. 입문 단계라면 "I am happy today." 같은 짧은 문장부터 천천히 시작해도 괜찮아요.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Grammarly나 ChatGPT랑 뭐가 달라요?<span class="sign">+</span></button>
+          <div class="faq-a"><p>Grammarly는 "고쳐주는" 도구고, ChatGPT는 "답해주는" 도구예요. Lingu Diary는 <span class="hl">매일의 글쓰기 습관</span>을 만들어주는 학습 환경이에요. 매일 일기를 쓰고, 자주 틀리는 패턴이 함께 모이고, 성장 리포트로 다시 펼쳐볼 수 있어요. 도구가 아니라 "코치 + 노트"에 가깝습니다.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">요금은 어떻게 되나요?<span class="sign">+</span></button>
+          <div class="faq-a"><p>Free 요금제에서는 주 2회 AI 첨삭(일기당 최대 10개 교정)을 무료로 쓸 수 있어요. 매일 첨삭과 원어민 버전, 주간·월간 리포트가 필요하다면 <span class="hl">Plus 월 ₩7,900</span>으로 확장하면 됩니다. 약정이 없어 언제든 해지할 수 있어요.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">어떤 기기에서 쓸 수 있나요?<span class="sign">+</span></button>
+          <div class="faq-a"><p>현재 <span class="hl">iOS 15.0 이상</span>의 iPhone에서 App Store를 통해 무료로 내려받을 수 있어요. 신용카드 없이 바로 시작할 수 있습니다.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Final CTA -->
   <section class="final-cta">
     <div class="container">
@@ -821,6 +921,7 @@
         <h5>Product</h5>
         <a href="#features">Features</a>
         <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
         <a href="https://apps.apple.com/kr/app/lingudiary-ai-%EC%98%81%EC%96%B4-%EC%9D%BC%EA%B8%B0/id6766164095" target="_blank" rel="noopener">Download</a>
       </div>
       <div class="footer-col">
@@ -835,5 +936,30 @@
       <span>build: v1.0.0</span>
     </div>
   </footer>
+
+  <script>
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const q = item.querySelector('.faq-q');
+      const a = item.querySelector('.faq-a');
+      q.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        faqItems.forEach(other => {
+          other.classList.remove('open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          a.style.maxHeight = a.scrollHeight + 'px';
+        }
+      });
+    });
+    // open the default-open item on load
+    window.addEventListener('load', () => {
+      const open = document.querySelector('.faq-item.open .faq-a');
+      if (open) open.style.maxHeight = open.scrollHeight + 'px';
+    });
+  </script>
 </body>
 </html>
